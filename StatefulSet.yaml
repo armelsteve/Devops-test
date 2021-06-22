@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: my-litecoin
+spec:
+  selector:
+    matchLabels:
+      app: litecoin
+  serviceName: "litecoin-service"
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: litecoin
+    spec:
+      containers:
+        - name: litecoin
+          image: litecoin:latest
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 80
+              name: litecoin
+          volumeMounts:
+            - name: litecoin-pv
+              mountPath: /mnt/data
+  volumeClaimTemplates:
+    - metadata:
+        name: litecoin-pvc
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        storageClassName: "manual"
+        resources:
+          requests:
+            storage: 1Gi

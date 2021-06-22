@@ -1,0 +1,4 @@
+franck manager account 45000
+sean manager infra 25000
+steph director purchase 80000
+leo manager sales 23000
