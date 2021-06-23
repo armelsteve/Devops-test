@@ -6,6 +6,7 @@ import os
 with open('file.txt', 'r') as f:
     file = f.readlines()
 
+#checking if unix is present and number of occurrence
     for word in file:
         x = re.findall("unix",word)
         if x:
