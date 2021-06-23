@@ -1,3 +1,6 @@
+//This Jenkinsfile build an image from a dockerfile
+//push the image in dockerhub and deploy a kubernetes application using that image.
+
 pipeline{
     options{
          buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '5'))

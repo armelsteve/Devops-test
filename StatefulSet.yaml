@@ -1,3 +1,5 @@
+#Deploy 3 stateful pods with the image from the Jenkinsfile build
+
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:

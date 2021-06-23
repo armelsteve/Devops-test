@@ -16,6 +16,6 @@ with open('file.txt', 'r') as f:
 
 print('\n')
 
-
+#Using awk command to return manager word in the text file
 awk_test = os.system("awk '/manager/ {print}' /Users/agansop/repo/kraken-test/file2.txt")
 print(awk_test)
