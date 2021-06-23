@@ -9,7 +9,7 @@ pipeline{
     stages{
        stage('Pull from scm'){
             steps{
-                 git branch: 'master', credentialsId: 'myCreds', url: 'https://github.com/armelsteve/kraken-test.git'
+                 git branch: 'master', credentialsId: 'myCreds', url: 'https://github.com/armelsteve/Devops-test'
             }
        }
        stage('build image'){
